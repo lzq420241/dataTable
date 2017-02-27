@@ -65,10 +65,14 @@
             $(document).ready(function(){
                 //Basic Example
                 $("#data-table-basic").bootgrid();
+                $("table").wrap("<div style='overflow-x:auto;'></div>");
                 $("table").colResizable({liveDrag: true,
                 resizeMode: 'overflow'});
-                $("table").wrap("<div style='overflow-x:auto;'></div>");
-
+                $(':checkbox').change(function() {
+                    $("table").colResizable({disable:true});
+                    $("table").colResizable({liveDrag: true,
+                    resizeMode: 'overflow'});
+                });
             });
         </script>
     </body>
